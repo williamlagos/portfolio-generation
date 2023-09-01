@@ -13,7 +13,8 @@ export const POST = async (request: NextRequest) => {
   }
 }
 
-export const GET = async () => {
+export const GET = async (request: NextRequest) => {
+  const tons = request.nextUrl.searchParams.get('t')
   const developers = await prisma.developer.findMany()
   return NextResponse.json({ developers })
 }
