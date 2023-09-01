@@ -1,13 +1,14 @@
-import Image from 'next/image'
-import { Heading, Main } from 'grommet'
-
+import { Box, Button, Input, Typography } from '@mui/material'
 import styles from './page.module.css'
 
 const Home = () => {
   return (
-    <Main className={styles.main}>
-      <Heading>Hello World!</Heading>
-    </Main>
+    <Box className={styles.main}>
+      <Typography variant='h5'>Portfolio Generator</Typography>
+      <Typography>Type the desired volume in tons of carbon credits they need.</Typography>
+      <Input></Input>
+      <Button>Submit</Button>
+    </Box>
   )
 }
 
