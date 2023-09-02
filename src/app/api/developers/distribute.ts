@@ -1,15 +1,4 @@
-type Developer = {
-  id: number
-  name: string
-  country: string
-  image: string
-  pricePerTon: number
-  offeredVolumeInTons: number
-  distributionWeight: number
-  supplierName: string
-  earliestDelivery: string
-  description: string
-}
+import { Developer } from "@/app/types"
 
 export const distributeTonnage = (tons: number, developers: Developer[]) => {
   let tonsBalance = tons

@@ -1,5 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse, NextRequest } from "next/server";
+import { distributeTonnage } from "./distribute";
+
+import { Developer } from "@/app/types";
 
 const prisma = new PrismaClient()
 
@@ -14,7 +17,12 @@ export const POST = async (request: NextRequest) => {
 }
 
 export const GET = async (request: NextRequest) => {
-  const tons = request.nextUrl.searchParams.get('t')
+  const tons = parseInt(request.nextUrl.searchParams.get('t') || '0')
   const developers = await prisma.developer.findMany()
-  return NextResponse.json({ developers })
+
+  return tons !== 0 ? (
+    NextResponse.json(distributeTonnage(tons, developers as Developer[]))
+  ) : (
+    NextResponse.json({ portfolio: developers, balance: 0 })
+  )
 }

@@ -4,7 +4,9 @@ import data from "../../../__tests__/datasource.json"
 
 describe('portfolio generation testing', () => {
   test('it should receive a proper distribution', () => {
-    const result = distributeTonnage(20, data.slice(0, 2))
+    const sampleData = data.map(d => ({ ...d, earliestDelivery: new Date(d.earliestDelivery)})).slice(0, 2)
+    
+    const result = distributeTonnage(20, sampleData)
     const r1 = result.portfolio.map(r => ({ id: r.dev.id, credits: r.credits}))
     const r2 = [{ id: 1, credits: 15 }, { id: 2, credits: 5 }]
 
