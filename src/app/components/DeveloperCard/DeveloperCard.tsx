@@ -1,4 +1,5 @@
-import { Card, CardMedia, CardContent, Typography } from '@mui/material'
+import { Box, Card, CardMedia, CardContent, Chip, Divider, Tooltip, Typography, Stack } from '@mui/material'
+import { Anchor, AttachMoney, CreditScore, Scale } from '@mui/icons-material'
 
 import { Developer } from '@/app/types'
 
@@ -15,13 +16,40 @@ const DeveloperCard = ({ dev, credits }: DeveloperCardProps) => (
       title="green iguana"
     />
     <CardContent>
-      <Typography variant='h6'>{dev.name}</Typography>
+      <Typography variant='h5'>{dev.name}</Typography>
       <Typography variant='h6'>{dev.country}</Typography>
-      <Typography>{dev.description}</Typography>
-      <Typography>Price per ton: {dev.pricePerTon} / Offered volume in tons: {dev.offeredVolumeInTons} / Distribution weight: {dev.distributionWeight}</Typography>
-      <Typography>Credits used: {credits}</Typography>
-      <Typography>Supplier: {dev.supplierName}</Typography>
-      <Typography>{dev.earliestDelivery.toLocaleDateString()}</Typography>
+
+      <Divider sx={{ my: 1 }} />
+
+      <Typography sx={{ my: 2 }}>
+        {dev.description}
+      </Typography>
+
+      <Box sx={{ my: 1 }}>
+        <Tooltip sx={{ mr: 1 }} title="Price per ton">
+          <Chip icon={<AttachMoney />} label={dev.pricePerTon} />
+        </Tooltip>  
+
+        <Tooltip sx={{ mr: 1 }} title="Offered volume in tons">
+          <Chip icon={<Anchor />} label={dev.offeredVolumeInTons} />
+        </Tooltip>
+
+        <Tooltip sx={{ mr: 1 }} title="Distribution weight">
+          <Chip icon={<Scale />} label={dev.distributionWeight} />
+        </Tooltip>
+
+        <Tooltip sx={{ mr: 1 }} title="Credits used">
+          <Chip icon={<CreditScore />} label={credits} />
+        </Tooltip>
+      </Box>
+      
+      <Stack direction="row" justifyContent="space-between" sx={{ mt: 2}} spacing={2}>
+        <Typography>Supplier: {dev.supplierName}</Typography>
+        <Typography>
+          {(new Date(dev.earliestDelivery)).toLocaleDateString()}&nbsp;
+          {(new Date(dev.earliestDelivery)).toLocaleTimeString()}
+        </Typography>
+      </Stack>
     </CardContent>
   </Card>
 )
