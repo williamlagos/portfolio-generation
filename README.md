@@ -1,6 +1,8 @@
 ## Getting Started
 
-This project was bootstrapped with Create Next App package, and uses a stack comprised of Next.js for the frontend and backend, Prisma as the data abstraction layer, and for keeping things simple, SQLite as the data provider. If you want to run it locally, execute the development server:
+This project was bootstrapped with Create Next App package, and uses a stack comprised of Next.js for the frontend and backend, Prisma as the data abstraction layer, and for keeping things simple, SQLite as the data provider. The commits follow the standard in Conventional Commits, and I tried to stick to Standard JS/TS code style as much as possible.
+
+If you want to run it locally, execute the development server:
 
 ```bash
 $ npm run dev
@@ -29,4 +31,4 @@ Since it was a simple application with an ellaborate algorithm (which took quite
 
 ## Next Steps
 
-What I would like to improve if there were more time certainly would be the test coverage and add a more professional data provider, e.g. a MongoDB one, that could be integrated with Prisma later with not that much effort. Regarding to appearance, if I had more time, I would try to align better the grid with the description different sizes on each item, and would put a placeholder in the center of the application - whenever the list was empty, and last but not least, I would add more responsiveness to the submit button by inserting the loading state. 
+What I would like to improve if there were more time certainly would be the test coverage, better error handling and add a more professional data provider, e.g. a MongoDB one, that could be integrated with Prisma later with not that much effort. Regarding to appearance, if I had more time, I would try to align better the grid with the description different sizes on each item, and would put a placeholder in the center of the application - whenever the list was empty, and last but not least, I would add more responsiveness to the submit button by inserting the loading state. Looking retrospectively, I could have put a better enforcement into the codestyle, like having a prettier and a more active eslint configurations.

@@ -64,14 +64,14 @@ const Home = () => {
           <Typography
           variant='h6'
             noWrap
-            component="div"
+            component='div'
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             Portfolio Generator
           </Typography>
           <Search>
             <StyledInputBase
-              placeholder="Type the desired volume in tons of carbon credits they need."
+              placeholder='Type the desired volume in tons of carbon credits they need.'
               inputProps={{ 'aria-label': 'search' }}
               data-cy='tons-input'
               onChange={fn}
@@ -79,7 +79,7 @@ const Home = () => {
           </Search>
           <IconButton 
             onClick={() => submit(tons)} 
-            color="secondary"
+            color='secondary'
             data-cy='tons-submit'
           >
             <Send />

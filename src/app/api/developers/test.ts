@@ -1,6 +1,6 @@
-import { distributeTonnage } from "./distribute"
+import { distributeTonnage } from './distribute'
 
-import data from "../../../__tests__/datasource.json"
+import data from '../../../__tests__/datasource.json'
 
 describe('portfolio generation testing', () => {
   test('it should receive a proper distribution', () => {

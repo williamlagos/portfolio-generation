@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
-import { NextResponse, NextRequest } from "next/server";
-import { distributeTonnage } from "./distribute";
+import { PrismaClient } from '@prisma/client';
+import { NextResponse, NextRequest } from 'next/server';
+import { distributeTonnage } from './distribute';
 
-import { Developer } from "@/app/types";
+import { Developer } from '@/app/types';
 
 const prisma = new PrismaClient()
 

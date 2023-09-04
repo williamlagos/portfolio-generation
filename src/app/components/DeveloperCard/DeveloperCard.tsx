@@ -14,7 +14,7 @@ const DeveloperCard = ({ dev, credits, index }: DeveloperCardProps) => (
     <CardMedia
       sx={{ height: 140 }}
       image={dev.image}
-      title="green iguana"
+      title='green iguana'
     />
     <CardContent>
       <Typography variant='h5'>{dev.name}</Typography>
@@ -27,24 +27,24 @@ const DeveloperCard = ({ dev, credits, index }: DeveloperCardProps) => (
       </Typography>
 
       <Box sx={{ my: 1 }}>
-        <Tooltip sx={{ mr: 1 }} title="Price per ton">
+        <Tooltip sx={{ mr: 1 }} title='Price per ton'>
           <Chip icon={<AttachMoney />} label={dev.pricePerTon} />
         </Tooltip>  
 
-        <Tooltip sx={{ mr: 1 }} title="Offered volume in tons">
+        <Tooltip sx={{ mr: 1 }} title='Offered volume in tons'>
           <Chip icon={<Anchor />} label={dev.offeredVolumeInTons} />
         </Tooltip>
 
-        <Tooltip sx={{ mr: 1 }} title="Distribution weight">
+        <Tooltip sx={{ mr: 1 }} title='Distribution weight'>
           <Chip icon={<Scale />} label={dev.distributionWeight} />
         </Tooltip>
 
-        <Tooltip sx={{ mr: 1 }} title="Credits used">
+        <Tooltip sx={{ mr: 1 }} title='Credits used'>
           <Chip data-cy={`credits-i${index}`} icon={<CreditScore />} label={credits} />
         </Tooltip>
       </Box>
       
-      <Stack direction="row" justifyContent="space-between" sx={{ mt: 2}} spacing={2}>
+      <Stack direction='row' justifyContent='space-between' sx={{ mt: 2}} spacing={2}>
         <Typography>Supplier: {dev.supplierName}</Typography>
         <Typography>
           {(new Date(dev.earliestDelivery)).toLocaleDateString()}&nbsp;

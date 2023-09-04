@@ -1,4 +1,4 @@
-import { Developer } from "@/app/types"
+import { Developer } from '@/app/types'
 
 export const distributeTonnage = (tons: number, developers: Developer[]) => {
   let tonsBalance = tons

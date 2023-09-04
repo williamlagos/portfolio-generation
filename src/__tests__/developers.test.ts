@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client"
-import axios from "axios"
+import { PrismaClient } from '@prisma/client'
+import axios from 'axios'
 
-import data from "./datasource.json"
+import data from './datasource.json'
 
 const API_URL = 'http://127.0.0.1:3000'
 const prisma = new PrismaClient()
