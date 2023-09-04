@@ -6,9 +6,10 @@ import { Developer } from '@/app/types'
 export interface DeveloperCardProps {
   dev: Developer
   credits: number
+  index: number
 }
 
-const DeveloperCard = ({ dev, credits }: DeveloperCardProps) => (
+const DeveloperCard = ({ dev, credits, index }: DeveloperCardProps) => (
   <Card variant='outlined'>
     <CardMedia
       sx={{ height: 140 }}
@@ -39,7 +40,7 @@ const DeveloperCard = ({ dev, credits }: DeveloperCardProps) => (
         </Tooltip>
 
         <Tooltip sx={{ mr: 1 }} title="Credits used">
-          <Chip icon={<CreditScore />} label={credits} />
+          <Chip data-cy={`credits-i${index}`} icon={<CreditScore />} label={credits} />
         </Tooltip>
       </Box>
       

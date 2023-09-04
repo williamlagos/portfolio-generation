@@ -24,6 +24,7 @@ test('renders basic input step', () => {
         description: "The \"EverGreen CarbonScape\" project is dedicated to combatting climate change by restoring and preserving vital forest ecosystems.\nThrough reforestation, afforestation, and sustainable forest management, we aim to create robust carbon sinks while promoting biodiversity, engaging local communities, and preventing deforestation."
       }}
       credits={0}
+      index={0}
     />
   )
   const textElement = screen.getByText(/Germany/i)

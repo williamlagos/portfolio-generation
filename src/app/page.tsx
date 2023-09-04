@@ -73,10 +73,17 @@ const Home = () => {
             <StyledInputBase
               placeholder="Type the desired volume in tons of carbon credits they need."
               inputProps={{ 'aria-label': 'search' }}
+              data-cy='tons-input'
               onChange={fn}
             />
           </Search>
-          <IconButton onClick={() => submit(tons)} color="secondary"><Send /></IconButton>
+          <IconButton 
+            onClick={() => submit(tons)} 
+            color="secondary"
+            data-cy='tons-submit'
+          >
+            <Send />
+          </IconButton>
         </Toolbar>
       </AppBar>
       
@@ -85,6 +92,7 @@ const Home = () => {
           {developers.map(({ dev, credits }, index: number) => (
             <Grid key={index} item xs={12} md={4}>
               <DeveloperCard 
+                index={index}
                 dev={{ ...dev }} 
                 credits={credits}
               />
