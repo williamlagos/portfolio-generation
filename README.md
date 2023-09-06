@@ -2,7 +2,13 @@
 
 This project was bootstrapped with Create Next App package, and uses a stack comprised of Next.js for the frontend and backend, Prisma as the data abstraction layer, and for keeping things simple, SQLite as the data provider. The commits follow the standard in Conventional Commits, and I tried to stick to Standard JS/TS code style as much as possible.
 
-If you want to run it locally, execute the development server:
+If you want to run it locally, make sure that this env var is set up (in an local .env file or in the general environment setup):
+
+```bash
+DATABASE_URL="file:./dev.db"
+```
+
+Then execute the development server:
 
 ```bash
 $ npm run dev
@@ -11,7 +17,7 @@ $ npm run dev
 If Docker would be a better option for you, I've done a Dockerfile that build a single container with the next server and prisma connector:
 
 ```bash
-$ docker build -t portfolio
+$ docker build . -t portfolio
 # After built, then run in the background
 $ docker run -it -p 3000:3000 -d portfolio
 ```
